@@ -2,9 +2,17 @@
 <html lang="en">
 
     <head>
+        
         <meta charset="UTF-8">
             <title>Project TWO</title>
         </meta>
+        
+        <!--css file-->
+        <link 
+            rel="stylesheet" 
+            type="text/css" 
+            href="styles.css">
+
         <!--font style-->
         <link 
             rel="preconnect" 
@@ -19,22 +27,79 @@
     </head>
 
     <body>
+        <nav>
 
-        <header>
+            <!--logo-->
+            <span id="logo">Header Logo</span> 
 
-            <nav>
+            <!--menu buttons-->               
+            <a href="#" class="menu">header link one</a>
+            <a href="#" class="menu">header link two</a>
+            <a href="#" class="menu">header link three</a>
 
-                <!--logo-->
-                <span id="logo">Header Logo</span> 
+        </nav>
 
-                <!--menu buttons-->               
-                <span class="menu">header link one</span>
-                <span class="menu">header link two</span>
-                <span class="menu">header link three</span>
-
-            </nav>
+        <main>
+            <div id="header_text">
+                <div id="text_area">
+                    <h1 id="head_main_title">This website is awesome</h1>
+                    <p id="head-secondary-text">
+                        This website has some subtext that goes here under the main title.
+                        It's a smaller font and the color is lower contrast.
+                    </p>
+                    <button><a href="#">Sign up</a></button>
+                </div>
+                <div id="place-holder-for-image">this is a place holder for an image</div>
+            </div>
             
-        </header>
+            <div id="white_background">
+                <header id="information_text">
+                    Some random information.
+                </header>
+                
+                <div class="container">
+                    <figure >
+                        <div class="place-holder-for-illustration"></div>
+                        <figcaption class="picture-info">this is some subtext under an illustration or image</figcaption>
+                    </figure>
+                    <figure >
+                        <div class="place-holder-for-illustration"></div>
+                        <figcaption class="picture-info">this is some subtext under an illustration or image</figcaption>
+                    </figure>
+                    <figure >
+                        <div class="place-holder-for-illustration"></div>
+                        <figcaption class="picture-info">this is some subtext under an illustration or image</figcaption>
+                    </figure>
+                    <figure >
+                        <div class="place-holder-for-illustration"></div>
+                        <figcaption class="picture-info">this is some subtext under an illustration or image</figcaption>
+                    </figure>
+                </div>
+                
+                <div class="gray-box">
+                    <article id="text-article">
+                        
+                            This is an inspiring quote, or a testimonial from a customer.
+                            Maybe it's just filling up space, or maybe people will actually read it. 
+                            Who knows? All I know is that it looks nice.        
+                        
+                    </article>
+                    <strong id="text-author">-Thor</strong>
+                </div>
+
+                <div class="call-to-action-box">
+                    <div id="text-line">
+                        <h1 id="call-to-action-title">Call to action! It's time!</h1>
+                        <p id="call-to-action-text">Sign up for our product by clicking that button right over there!</p>
+                    </div>
+                    <button id="button-with-border"><a href="#">Sign up</a></button>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <span id="copyright">Copyright ©</span>
+        </footer>  
 
     </body>
 
