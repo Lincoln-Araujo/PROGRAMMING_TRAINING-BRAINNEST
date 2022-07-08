@@ -1,7 +1,3 @@
-* {
-    box-sizing: border-box;
-}
-
 html {
     background-color: #1F2937;
     color: white;
@@ -13,6 +9,7 @@ body {
     text-align: center;    
 }
 
+/* header */
 nav {
     display: flex;
     width: 75%;
@@ -29,24 +26,84 @@ nav {
     margin: 0 0 0 0;
 }
 
+/* buttons */
+a {
+    font-size: 16px;
+    font-weight: 500;
+}
+
 .menu {
     font-size: 18px;
     font-weight: lighter;
     color: #E5E7EB;
-    margin: 0 0 0 16px;
-    padding: 0 0 0 0;
     text-decoration: none;
+    position: relative;
+}
+
+.btn {
+    text-align: center;
+    display: inline-block;
+    position: relative;
+    color: white;
+    background-color: #3882F6;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;    
+    padding: 8px 0px;
+    width: 120px;
+    border-radius: 8px;
+    text-decoration: none;
+}
+
+.button-with-border {
+    border: 1px solid white;
+}
+
+.menu::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 0;
+    height: 2px;
+    background-color: #3882F6;
+    transition: width 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+
+@media (hover: hover) and (pointer: fine) {
+     .menu:hover::before {
+        left: 0;
+        right: auto;
+        width: 100%;
+    }
+
+    .btn:hover {
+        box-shadow: 0 8px 16px 0 rgba(191, 227, 241, 0.13), 0 11px 50px 0 rgba(191, 227, 241, 0.13);
+    }
+
+    .menu:hover, .btn:hover, .button-with-border:hover, figure:hover {
+        
+        filter: grayscale(0);
+        -webkit-transform:scale(1.05);
+        -moz-transform: scale(1.05);
+        -o-transform: scale(1.05);
+        transform:scale(1.05);
+        -webkit-transition: all 100ms ease-in-out;
+            -moz-transition: all 100ms ease-in-out;
+            -o-transition: all 100ms ease-in-out;
+            transition: all 100ms ease-in-out;
+            
+    }
 }
 
 main {
     display: flex;
     justify-content: center;
-    position: relative;
-    top: 80px;
-    
+    margin-top: 100px;  
 }
 
-#header_text{    
+/* first block of text */
+.header_text{    
     width: 75%;
 	align-items:center;
 	display: flex;
@@ -58,13 +115,14 @@ main {
 #head_main_title {
     width: 438px;
     font-size: 48px;
+    line-height: 48px;
     font-weight:bolder;
     color:#F9FAF8;
-    margin: 0 0 0 0;
+    margin: 0 0 8px 0;
     padding: 0 0 0 0;
 }
 
-#text_area{
+.text_area{
     text-align: left;
     display: block;
     flex-direction: column;
@@ -76,7 +134,7 @@ main {
     width: 438px;
     font-size: 18px;
     font-weight: lighter;
-    margin: 0 0 0 0;
+    margin: 0 0 8px 0;
     padding: 0 0 0 0;
 }
 
@@ -91,15 +149,13 @@ main {
     font-weight:300;
 }
 
-table {
-    margin: auto;
-}
-
+/* second block of text */
 #white_background {
     background-color: white;
-    top: 330px;
+    margin-top: 330px;
     width: 100%;
     position: absolute;
+    display: block;
 }
 
 #information_text {
@@ -107,22 +163,6 @@ table {
     font-size: 36px;
     color: #1F2937;
     padding-top: 24px;
-}
-
-button {
-    background-color: #3882F6;
-    border: 1px solid #3882F6;
-    border-radius: 5px; 
-    width: 100px;
-    height: 30px;
-    margin-top: 16px;
-}
-
-a {
-    color: white;
-    font-size: 16px;
-    font-weight: 500;
-    text-decoration: none;
 }
 
 figure {
@@ -158,6 +198,7 @@ figure {
     padding-bottom: 80px;
 }
 
+/* third block of text */
 .gray-box {
     background-color: #E5E7EB;
     width: 100%;
@@ -166,9 +207,10 @@ figure {
 }
 
 article {
-    width: 50%;
+    width: 46%;
     color: black;
     margin: auto auto;
+    
 }
 
 #text-article {
@@ -183,10 +225,11 @@ article {
 #text-author {
     text-align: right;
     color: #1F2937;
-    margin-right: 26%;
-    padding-bottom: 50px;
+    margin-right: 29%;
+    padding-bottom: 70px;;
 }
 
+/* fourth block of text */
 .call-to-action-box {
     background-color: #3882F6;
     border-radius: 10px;
@@ -197,6 +240,7 @@ article {
 	flex-direction: row;
 	justify-content:space-around;
     align-content: space-around;
+	
 }
 
 #text-line{
@@ -221,16 +265,10 @@ article {
     padding-bottom: 25px;
 }
 
-#button-with-border {
-    border-color: #E5E7EB;
-    margin-top: 0;
-    margin-left: 0;
-}
-
+/* footer */
 #copyright {
     display: flex;
-    justify-content: center;
-    position: relative;
-    padding-top: 1010px;
+    justify-content: center;    
+    padding-top: 960px;
     padding-bottom: 20px;
 }
