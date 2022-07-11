@@ -5,4 +5,4 @@
 ### a quick look at the HTML page of this module
 #### it was made with pure html, not adding any css style or javascript code
 
-[./images/html-project.png](./Project)
+[!(./images/html-project.png)](./Project)
