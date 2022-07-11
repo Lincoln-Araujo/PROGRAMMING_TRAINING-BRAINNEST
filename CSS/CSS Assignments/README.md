@@ -4,4 +4,4 @@
 
 # Task Three
 
-<p> Applying some css style to html assignemt <a href="../../HTML/HTML_Assignments/links-and-images">links-and-images</a></p>
+<p> Applying some css style to html assignemt <a href="../../HTML/HTML_Assignments/links-and-images">links-and-images</a> that we've workded in the HTML module</p>
