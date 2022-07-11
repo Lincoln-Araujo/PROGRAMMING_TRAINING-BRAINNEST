@@ -1,1 +1,1 @@
-[![task two](../../../images/task-two-css.png)]
+![task two](../../../images/task-two-css.png)
