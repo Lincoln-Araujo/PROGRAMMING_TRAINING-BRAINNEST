@@ -4,4 +4,4 @@
 
 ### a quick look at the CSS design of this module
 
-[!(images/css-project.png)](./Project)
+[![css project](images/css-project.png)](./Project)
