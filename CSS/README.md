@@ -4,4 +4,4 @@
 
 ### a quick look at the CSS design of this module
 
-<div><img src="./images/css-project.png" href="./Project"/></div>
+[./images/css-project.png](./Project)
