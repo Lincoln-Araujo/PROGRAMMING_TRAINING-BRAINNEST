@@ -1,0 +1,117 @@
+html, body {
+    background-color: #202124;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 47px;
+    color: white;
+}
+
+body {
+    margin: 0;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+main {
+    width: 651px;
+    height: auto;
+}
+
+.display-calc {    
+    border: 1px solid #5f6368;
+    border-radius: 10px;
+    width: 650px;
+    height: 92px;    
+}
+
+#log {
+    text-align: right;
+    padding-right: 24px;
+}
+
+table {
+    
+    width: 651px;
+    height: 405px;
+    flex-direction: row;
+    justify-content:space-between;
+    padding: 0 0 0 0;
+    
+}
+
+tr {
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    margin-top: 16px;
+}
+
+#project-name {
+    width: 315px;
+    height: 65px;
+    background-color: #5f6368;
+    border-radius: 10px;
+    text-transform: uppercase;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.button {
+    width: 147px;
+    height: 65px;
+    color: white;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    cursor: pointer;
+}
+
+.button:hover {
+    filter: grayscale(0);
+        -webkit-transform:scale(1.1);
+        -moz-transform: scale(1.1);
+        -o-transform: scale(1.1);
+        transform:scale(1.1);
+        -webkit-transition: all 100ms ease-in-out;
+            -moz-transition: all 100ms ease-in-out;
+            -o-transition: all 100ms ease-in-out;
+            transition: all 100ms ease-in-out;
+}
+
+.button:active {
+    filter: brightness(80%);
+        -webkit-transform:scale(1);
+        -moz-transform: scale(1);
+        -o-transform: scale(1);
+        transform:scale(1);
+}
+
+.gray-button {
+    background-color: #5f6368;
+}
+
+.black-button {
+    background-color: #3C4043;
+}
+
+.blue-button {
+    background-color: #8AB4F8;
+    color: #202124;
+}
+
+img {
+    margin: auto auto;
+    width: 32px;    
+}

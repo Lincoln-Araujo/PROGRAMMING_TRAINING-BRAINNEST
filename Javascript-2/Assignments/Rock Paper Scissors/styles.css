@@ -116,6 +116,7 @@ footer {
     background: rgba(215, 197, 180, 0.5);
     border: 2px solid;
     border-radius: 30px;
+    cursor: pointer;
 }
 
 .button-images:hover {
