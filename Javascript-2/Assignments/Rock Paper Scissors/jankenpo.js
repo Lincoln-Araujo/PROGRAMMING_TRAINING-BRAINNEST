@@ -1,73 +1,160 @@
-    var scorePlayer = 0;
+function computerPlay() {
 
-    var scoreComputer = 0;
+    let options = ['Rock', 'Paper', 'Scissors'];
 
-    var result = '';
-    
-    function computerPlay() {
+    let sortedOption = Math.floor(Math.random() * options.length);
 
-        let options = ['Rock', 'Paper', 'Scissors'];
-
-        let sortedOption = Math.floor(Math.random() * options.length);
-
-        // returning the sorted element according to the sorted number
-        if (options[sortedOption]) {
-            return options[sortedOption].toLowerCase();
-        }
+    // returning the sorted element according to the sorted number
+    if (options[sortedOption]) {
+        return options[sortedOption].toLowerCase();
     }
+}
 
-    function playRound(playerSelection, computerSelection) {
+function returnRock() {   
+    link.getAttribute("xlink:href");
+    link.setAttribute("xlink:href", "#icon-rock");
+    playerComputer = computerPlay();
+    returnComputerChoice(playerComputer);
+    console.log("you chose rock"); 
+    game(playRound("rock", playerComputer));
+    returnScore();
+}
 
-        let selection = playerSelection.toLowerCase();
+function returnPaper() {
+    link.getAttribute("xlink:href");
+    link.setAttribute("xlink:href", "#icon-hand");
+    playerComputer = computerPlay();
+    returnComputerChoice(playerComputer);
+    console.log("you chose paper");
+    game(playRound("paper", playerComputer));
+    returnScore();
+}
 
-        if (selection == "paper" && computerSelection == "scissors") {
-            scoreComputer++;
-            return "You Lose! Scissors cuts paper."
-        } else if ( selection == "scissors" && computerSelection == "rock") {
-            scoreComputer++;
-            return "You Lose! Rock breaks scissors."
-        } else if ( selection == "rock" && computerSelection == "paper") {
-            scoreComputer++;
-            return "You Lose! Paper covers rock."
-        } else if ( selection == "paper" && computerSelection == "rock") {
-            scorePlayer++;
-            return "You Win! Paper covers rock."
-        } else if ( selection == "scissors" && computerSelection == "paper") {
-            scorePlayer++;
-            return "You Win! Scissors cuts paper."
-        } else if ( selection == "rock" && computerSelection == "scissors") {
-            scorePlayer++;
-            return "You Win! Rock breaks scissors."
-        } else if ( selection == computerSelection) {
-            return "Oh, it's a tie!"
-        } else {
-            return "You can only choose paper, scissors or rock"
-        }
+function returnScissors() {
+    link.getAttribute("xlink:href");
+    link.setAttribute("xlink:href", "#icon-scissors");
+    playerComputer = computerPlay();
+    returnComputerChoice(playerComputer);
+    console.log("you chose scissors");
+    game(playRound("scissors", playerComputer));
+    returnScore();
+}
+
+function returnScore() {
+    document.getElementById("score-computer").innerHTML = newScoreComputer;
+    document.getElementById("score-player").innerHTML = newScorePlayer;
+}
+
+function returnComputerChoice(computerChoice) {
+    if (computerChoice == "rock") {
+        linkComputer.getAttribute("xlink:href");
+        linkComputer.setAttribute("xlink:href", "#icon-rock");
+        console.log("computer chose rock");
+    } else if (computerChoice == "paper") {
+        linkComputer.getAttribute("xlink:href");
+        linkComputer.setAttribute("xlink:href", "#icon-hand");
+        console.log("computer chose paper");
+    } else if (computerChoice == "scissors") {
+        linkComputer.getAttribute("xlink:href");
+        linkComputer.setAttribute("xlink:href", "#icon-scissors");
+        console.log("computer chose scissors");
+    }
+}
+
+function playRound(playerOne, playerTwo) {
+
+    if (playerOne == "paper" && playerTwo == "scissors") {
+        newScoreComputer++;
+        round++;
+        console.log(`player: ${newScorePlayer} x computer: ${newScoreComputer}`);
+        console.log("You Lose! Scissors cuts paper.");
+        document.getElementById("message").innerHTML = "You Lose! Scissors cuts paper."
+    } else if ( playerOne == "scissors" && playerTwo == "rock") {
+        newScoreComputer++;
+        round++;
+        console.log(`player: ${newScorePlayer} x computer: ${newScoreComputer}`);
+        console.log("You Lose! Rock breaks scissors.");
+        document.getElementById("message").innerHTML = "You Lose! Rock breaks scissors.";
+    } else if ( playerOne == "rock" && playerTwo == "paper") {
+        newScoreComputer++;
+        round++;
+        console.log(`player: ${newScorePlayer} x computer: ${newScoreComputer}`);
+        console.log("You Lose! Paper covers rock.");
+        document.getElementById("message").innerHTML = "You Lose! Paper covers rock.";
+    } else if ( playerOne == "paper" && playerTwo == "rock") {
+        newScorePlayer++;
+        round++;
+        console.log(`player: ${newScorePlayer} x computer: ${newScoreComputer}`);
+        console.log("You Win! Paper covers rock.");
+        document.getElementById("message").innerHTML = "You Win! Paper covers rock.";
+    } else if ( playerOne == "scissors" && playerTwo == "paper") {
+        newScorePlayer++;
+        round++;
+        console.log(`player: ${newScorePlayer} x computer: ${newScoreComputer}`);
+        console.log("You Win! Scissors cuts paper.");
+        document.getElementById("message").innerHTML = "You Win! Scissors cuts paper."
+    } else if ( playerOne == "rock" && playerTwo == "scissors") {
+        newScorePlayer++;
+        round++;
+        console.log(`player: ${newScorePlayer} x computer: ${newScoreComputer}`);
+        console.log("You Win! Rock breaks scissors.")
+        document.getElementById("message").innerHTML = "You Win! Rock breaks scissors."
+    } else if ( playerOne == playerTwo) {
+        round++;
+        console.log(`player: ${newScorePlayer} x computer: ${newScoreComputer}`);
+        console.log("Oh, it's a tie!")
+        document.getElementById("message").innerHTML = "Oh, it's a tie!"
+    } else {
+        console.log("You can only choose paper, scissors or rock");
+        document.getElementById("message").innerHTML = "You can only choose paper, scissors or rock";
+    }
         
-    }
+}
 
-    function game() {
 
-        for (let round = 1; round <= 5; round++) {
-     
-            const playerSelection =  getElementById("svg").addEventListener("click", );
-            
-            const computerSelection = computerPlay();
 
-            playRound(playerSelection, computerSelection);
-            
-            console.log(playRound(playerSelection, computerSelection));
-        }        
+function game (func) {
 
-        if (scoreComputer > scorePlayer) {
-            result = `Computer is the winner with a score of ${scoreComputer}`;
-        } else if ( scoreComputer < scorePlayer) {
-            result = `You won with a score of ${scorePlayer}`;
-        } else {
-            result = 'It was a tie.';
-        }
+    func 
 
-        return result;
-    }
+    document.getElementById("round").innerHTML = `ROUND ${round}`;
 
-   console.log(game())
+    if (newScoreComputer == 5) {
+        document.getElementById("message").innerHTML = "Oh no, computer is the winner..."
+        setTimeout(function() {
+            window.location.reload(1);
+        }, 1500)
+    } else if (newScorePlayer == 5) {
+        document.getElementById("message").innerHTML = "CONGRATULATIONS! You are the WINNER!"
+        setTimeout(function() {
+            window.location.reload(1);
+        }, 1500)
+    }  
+ 
+}
+
+const rock = document.getElementById("rock-button");
+
+const paper = document.getElementById("paper-button");
+
+const scissors = document.getElementById("scissors-button");
+
+let newScoreComputer = 0;
+
+let newScorePlayer = 0;
+
+let playerSelection = '';
+
+var playerComputer = '';
+
+rock.addEventListener("click", returnRock)
+
+paper.addEventListener("click", returnPaper);
+
+scissors.addEventListener("click", returnScissors)
+
+let link = document.getElementById("player-choice");
+
+let linkComputer = document.getElementById("computer-choice");
+
+let round = 0;
