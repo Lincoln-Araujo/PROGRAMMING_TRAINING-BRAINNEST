@@ -1,3 +1,6 @@
+/* FUNCTIONS */
+
+// this function returns a random choice for the adversary(computer)
 function computerPlay() {
 
     let options = ['Rock', 'Paper', 'Scissors'];
@@ -10,6 +13,7 @@ function computerPlay() {
     }
 }
 
+// making the images and score appear on the screen according the player's choice
 function returnRock() {   
     link.getAttribute("xlink:href");
     link.setAttribute("xlink:href", "#icon-rock");
@@ -40,11 +44,13 @@ function returnScissors() {
     returnScore();
 }
 
+// function to show the current score on the screen
 function returnScore() {
     document.getElementById("score-computer").innerHTML = newScoreComputer;
     document.getElementById("score-player").innerHTML = newScorePlayer;
 }
 
+// making the element image appear according the computer's choice
 function returnComputerChoice(computerChoice) {
     if (computerChoice == "rock") {
         linkComputer.getAttribute("xlink:href");
@@ -61,6 +67,7 @@ function returnComputerChoice(computerChoice) {
     }
 }
 
+// function to play one round and set new scores
 function playRound(playerOne, playerTwo) {
 
     if (playerOne == "paper" && playerTwo == "scissors") {
@@ -111,34 +118,52 @@ function playRound(playerOne, playerTwo) {
         
 }
 
+// necessary for reload game after the score 5 has been achived
+function reloadGame () {    
 
+    setTimeout(function() {
+        window.location.reload(1);
+    }, 2000);
 
+}
+
+// main function to start the game 
 function game (func) {
 
-    func 
+    func     
 
     document.getElementById("round").innerHTML = `ROUND ${round}`;
 
-    if (newScoreComputer == 5) {
-        document.getElementById("message").innerHTML = "Oh no, computer is the winner..."
-        setTimeout(function() {
-            window.location.reload(1);
-        }, 1500)
-    } else if (newScorePlayer == 5) {
-        document.getElementById("message").innerHTML = "CONGRATULATIONS! You are the WINNER!"
-        setTimeout(function() {
-            window.location.reload(1);
-        }, 1500)
-    }  
- 
-}
+    if (newScoreComputer >= 5) {
+        
+        document.getElementById("message").innerHTML = "Oh no, computer is the winner...";
 
+        reloadGame();
+        
+    } else if (newScorePlayer >= 5) {
+        
+        document.getElementById("message").innerHTML = "CONGRATULATIONS! You are the WINNER!";
+
+        reloadGame();
+
+    } 
+ 
+} 
+
+/* VARIABLES */
+
+// getting html elements
 const rock = document.getElementById("rock-button");
 
 const paper = document.getElementById("paper-button");
 
 const scissors = document.getElementById("scissors-button");
 
+let link = document.getElementById("player-choice");
+
+let linkComputer = document.getElementById("computer-choice");
+
+// setting inital scores, choices and round
 let newScoreComputer = 0;
 
 let newScorePlayer = 0;
@@ -147,14 +172,11 @@ let playerSelection = '';
 
 var playerComputer = '';
 
+let round = 0;
+
+// listening events to return images according to the pressed button
 rock.addEventListener("click", returnRock)
 
 paper.addEventListener("click", returnPaper);
 
-scissors.addEventListener("click", returnScissors)
-
-let link = document.getElementById("player-choice");
-
-let linkComputer = document.getElementById("computer-choice");
-
-let round = 0;
+scissors.addEventListener("click", returnScissors);
