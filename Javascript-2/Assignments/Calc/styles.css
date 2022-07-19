@@ -1,59 +1,84 @@
-html, body {
-    background-color: #202124;
+*, *::before, *::after {
+    box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
-    font-style: normal;
     font-weight: 400;
+    font-style: normal;
     font-size: 32px;
     line-height: 47px;
     color: white;
 }
 
+html, body {
+    background-color: #202124;    
+}
+
 body {
     margin: 0;
+    padding: 0;
 }
 
 .container {
     width: 100vw;
     height: 100vh;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
-    align-content: center;
+    
 }
 
 main {
     width: 651px;
-    height: auto;
+    height: 495px;   
 }
 
-.display-calc {    
+.output {    
+    height: 2.75rem;
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    flex-direction: column;
+    padding: 10px;
+    word-wrap: break-word;
+    word-break: break-all;
     border: 1px solid #5f6368;
-    border-radius: 10px;
-    width: 650px;
-    height: 92px;    
+    border-radius: 10px;   
 }
 
-#log {
-    text-align: right;
-    padding-right: 24px;
+.previous-operand {
+    color: rgba(255,255,255, 0.75);
+    font-size: 0.5rem;
 }
 
-table {
-    
+.current-operand {
+    color: white;
+    font-size: 1rem;
+}
+
+.buttons {
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(4, 147px);
+    grid-template-rows: repeat(6, 80px);
     width: 651px;
     height: 405px;
     flex-direction: row;
     justify-content:space-between;
-    padding: 0 0 0 0;
-    
+    margin: 8px 0 0 0;   
 }
 
-tr {
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between;
+    margin-bottom: 16px;
+}
+
+.first-line {
     display: flex;
     flex-direction: row;
-    justify-content:space-between;
-    margin-top: 16px;
+    justify-content: space-between;
 }
 
 #project-name {
@@ -67,10 +92,11 @@ tr {
     display: flex;
 }
 
-.button {
+button {
     width: 147px;
     height: 65px;
     color: white;
+    border-color: transparent;
     border-radius: 10px;
     align-items: center;
     justify-content: center;
@@ -78,7 +104,7 @@ tr {
     cursor: pointer;
 }
 
-.button:hover {
+button:hover {
     filter: grayscale(0);
         -webkit-transform:scale(1.1);
         -moz-transform: scale(1.1);
@@ -90,7 +116,7 @@ tr {
             transition: all 100ms ease-in-out;
 }
 
-.button:active {
+button:active {
     filter: brightness(80%);
         -webkit-transform:scale(1);
         -moz-transform: scale(1);
@@ -115,3 +141,37 @@ img {
     margin: auto auto;
     width: 32px;    
 }
+
+
+@media screen and (max-width: 481px) { 
+
+    *, *::before, *::after {
+        font-size: 16px;
+        line-height: 19px;     
+    }
+
+    main {
+        width: 377px;
+        height: 299px; 
+    }
+
+    button {
+        width: 85px;
+        height: 37px;
+    }
+
+    img {
+        width: 16px;
+    }
+
+    .buttons {
+        width: 377px;
+        height: 194px;
+        grid-template-columns: repeat(4, 97.5px);
+        grid-template-rows: repeat(6, 50px);
+    }
+    
+    #project-name {
+        width: 182px;
+        height: 37px;
+    }
