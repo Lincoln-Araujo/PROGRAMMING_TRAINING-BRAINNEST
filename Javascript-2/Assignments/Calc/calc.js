@@ -84,7 +84,6 @@ class Calculator {
 
 }
 
-
 /* BUTTONS */
 
 const numberButtons = document.querySelectorAll('[data-number]');
@@ -107,6 +106,7 @@ const calculator = new Calculator(previousOperandTextElement, currentOperandText
 
 /* EVENT LISTENERS */ 
 
+// by click
 numberButtons.forEach(button => {
     button.addEventListener('click', () => {
       calculator.appendNumber(button.innerText)
@@ -135,7 +135,8 @@ numberButtons.forEach(button => {
     calculator.delete()
     calculator.updateDisplay()
   })
-  
+
+  // by type  
   document.addEventListener('keydown', function (event) {
     let patternForNumbers = /[0-9]/g;
     let patternForOperators = /[+\-×\/]/g
