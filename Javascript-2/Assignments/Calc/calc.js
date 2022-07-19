@@ -71,8 +71,7 @@ class Calculator {
         } else {
             return integerDisplay;
         }
-    }
-    
+    }    
 
     updateDisplay() {
         this.currentOperandTextElement.innerText = this.getDisplayNumber(this.currentOperand);
@@ -84,6 +83,9 @@ class Calculator {
     }
 
 }
+
+
+/* BUTTONS */
 
 const numberButtons = document.querySelectorAll('[data-number]');
 
@@ -99,7 +101,11 @@ const previousOperandTextElement = document.querySelector('[data-previous-operan
 
 const currentOperandTextElement = document.querySelector('[data-current-operand]');
 
+/* CALCULATOR OBJECT*/
+
 const calculator = new Calculator(previousOperandTextElement, currentOperandTextElement);
+
+/* EVENT LISTENERS */ 
 
 numberButtons.forEach(button => {
     button.addEventListener('click', () => {
